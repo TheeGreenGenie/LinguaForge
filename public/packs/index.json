@@ -1,0 +1,42 @@
+{
+  "yo": {
+    "lang": "yo",
+    "version": "20261108.1",
+    "bytes": 3371129,
+    "words": 4430,
+    "sentences": 5348,
+    "passages": 830
+  },
+  "zh": {
+    "lang": "zh",
+    "version": "20261108.1",
+    "bytes": 6116389,
+    "words": 15001,
+    "sentences": 9800,
+    "passages": 275
+  },
+  "fr": {
+    "lang": "fr",
+    "version": "20261108.1",
+    "bytes": 6801300,
+    "words": 15001,
+    "sentences": 10006,
+    "passages": 275
+  },
+  "pt": {
+    "lang": "pt",
+    "version": "20261108.1",
+    "bytes": 7465670,
+    "words": 15002,
+    "sentences": 10006,
+    "passages": 275
+  },
+  "es": {
+    "lang": "es",
+    "version": "20261108.1",
+    "bytes": 7245981,
+    "words": 15002,
+    "sentences": 10007,
+    "passages": 275
+  }
+}

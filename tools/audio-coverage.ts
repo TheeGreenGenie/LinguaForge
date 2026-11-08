@@ -1,0 +1,10 @@
+import { readFileSync } from 'node:fs';
+import { tokenize, lookupKey } from '../src/lang/tokenize';
+const lines = ['female', 'male'].flatMap((g) => readFileSync(`data/raw/yo/openslr/line_index_${g}.tsv`, 'utf8').trim().split('\n'));
+const pack = JSON.parse(readFileSync('public/packs/yo.json', 'utf8'));
+const tokSets = lines.map((l) => new Set(tokenize((l.split('\t')[1] ?? '').normalize('NFC'), 'yo').filter((t) => t.isWord).map((t) => lookupKey(t.text))));
+const words = pack.words.slice(0, 600);
+const covered = words.filter((w: any) => tokSets.some((s) => s.has(lookupKey(w.lemma))));
+console.log('clips', lines.length, '| top-600 words heard in ≥1 clip:', covered.length);
+const pairs = ['ọkọ', 'ọkọ́', 'ọkọ̀', 'igbá', 'igba', 'ìgbà', 'ìgbá', 'èdè', 'edé'];
+console.log('minimal-pair words with a clip:', pairs.filter((p) => tokSets.some((s) => s.has(lookupKey(p)))).join(' '));

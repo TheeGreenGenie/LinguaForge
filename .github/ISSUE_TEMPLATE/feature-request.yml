@@ -1,0 +1,16 @@
+name: Idea or feature request
+description: Suggest an improvement, a new exercise type or a new language.
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What would help your learning?
+      description: Describe the problem first, then your idea.
+    validations:
+      required: true
+  - type: textarea
+    id: sources
+    attributes:
+      label: Data or sources (for new languages or content)
+      description: Free, openly licensed dictionaries or corpora we could use.

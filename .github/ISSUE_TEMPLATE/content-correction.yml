@@ -1,0 +1,45 @@
+name: Content correction
+description: A wrong tone mark, translation, pronunciation, register or unnatural sentence. You can attach the CSV exported from the app.
+title: "[lang] Content corrections"
+labels: ["content", "needs-review"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you! In the app, **Settings → Help improve LinguaForge → Export my corrections** saves your ✎ fixes as a CSV. Drag that file into the box below. You can also just describe the problem.
+  - type: dropdown
+    id: lang
+    attributes:
+      label: Language
+      options: ["Yorùbá", "Mandarin Chinese", "Spanish", "French", "Portuguese (Brazil)"]
+    validations:
+      required: true
+  - type: dropdown
+    id: fluency
+    attributes:
+      label: Your level in this language
+      description: This helps reviewers weigh the fix. Learners' reports are welcome too.
+      options: ["Native speaker", "Fluent / professional", "Learner"]
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: Corrections
+      description: Attach the exported CSV, or list each item as "wrong → right", with a short reason if it helps.
+      placeholder: |
+        ọkọ̀ was glossed as "husband"; it means "vehicle" (husband is ọkọ).
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Source (optional)
+      description: A dictionary, grammar or other reference, if you have one.
+  - type: checkboxes
+    id: license
+    attributes:
+      label: Licence
+      options:
+        - label: I agree my corrections may be included under CC BY-SA 4.0 (see LICENSES.md).
+          required: true

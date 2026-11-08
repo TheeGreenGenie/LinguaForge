@@ -1,0 +1,38 @@
+{
+  "name": "linguaforge",
+  "private": true,
+  "version": "0.1.0",
+  "license": "MIT",
+  "type": "module",
+  "description": "Offline dictionary-driven language learning PWA (pt, yo, zh, es, fr)",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "import": "tsx tools/import-dictionary.ts",
+    "build:packs": "tsx tools/build-packs.ts",
+    "deploy": "npm run build && gh-pages -d dist"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^1.6.0",
+    "dexie": "^4.4.7",
+    "hanzi-writer": "^3.7.3",
+    "preact": "^11.2.0",
+    "ts-fsrs": "^5.4.2"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.65.0",
+    "@preact/preset-vite": "^2.10.6",
+    "@types/node": "^26.6.6",
+    "fake-indexeddb": "^6.2.7",
+    "gh-pages": "^6.3.0",
+    "hanzi-writer-data": "^2.0.1",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2",
+    "vite": "^7.3.7",
+    "vite-plugin-pwa": "^2.0.0",
+    "vitest": "^3.2.7"
+  }
+}
